@@ -6,7 +6,7 @@ import { faGithub,faSquareTwitter, faInstagram} from '@fortawesome/free-brands-s
 
 function App() {
 
-  const [isHovered, setIsHovered] = useState(false);
+  const [activeItem, setActiveItem] = useState('home');
 
   const quote = "'"
   const message = "hi, jezz is here...";
@@ -50,12 +50,12 @@ function App() {
             <h1>_jezz</h1>
             <nav>
               <ul>
-                <li>Home</li>
-                <li>Skills</li>
-                <li>Experiences</li>
-                <li>Contact</li>
-              </ul>
-              <div className='animation start-home'></div>
+                <li onClick={() => setActiveItem('home')}>Home</li>
+                <li onClick={() => setActiveItem('skill')}>Skills</li>
+                <li onClick={() => setActiveItem('experience')}>Experiences</li>
+                <li onClick={() => setActiveItem('contact')}>Contact</li>
+                <div className={`animation active-${activeItem}`}></div>
+              </ul>     
             </nav>
           </header>
 
@@ -67,7 +67,7 @@ function App() {
               <div className='intro-message'>
                 <p>My name is Dat {quote}jezz{quote} Hoang Tan</p>
                 <p>Future JS FullStack Developer</p>
-                <p style={{fontSize: '1.2rem'}}>From Dong Hoi City, Viet Nam</p>
+                <p style={{fontSize: '1.2rem'}}>From Dong Hoi City, Viet Nam.</p>
               </div>
               <div className='intro-icon-container'>
                 <FontAwesomeIcon className = "intro-icons" icon={faGithub} fontSize="2.5rem"/>                

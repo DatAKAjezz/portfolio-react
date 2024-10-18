@@ -12,41 +12,81 @@ body{
  */
 
 header{
+  position: sticky;
   color: white;
   height: 10vh;
   display: flex;
   align-items: center;justify-content: center;
+  border-bottom: 1px solid rgb(42, 40, 40);
   h1{
     width: 15%;
   }
 }
 
-header nav{
+nav{
   width: 40%;
 } 
-header nav ul {
-  color: white;
+nav ul {
+  position: relative;
   display: flex;
-  width: 100%;
-  justify-content: space-evenly;
-  li{
-    cursor: pointer;
-    list-style-type: none;
-    a{
-      text-decoration: none;
-      color: white;
-    }
-  }
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
 }
 
-nav ul .animation{
+nav ul li {
+  flex: 1;
+  text-align: center;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+nav ul .animation {
   position: absolute;
   height: 3px;
-  border-radius: 1px;
-  top: 0;
-  color: white;
-  background-color: white !important;
-  width: 100px;
+  width: 25%;
+  background-color: white;
+  bottom: 0;
+  transition: all 0.5s ease;
+}
+
+/* activeeeeeeeeeeee */
+nav ul .start-home, nav ul .active-home {
+  left: 0;
+}
+
+nav ul .start-skill, nav ul .active-skill {
+  left: 25%;
+}
+
+nav ul .start-experience, nav ul .active-experience {
+  left: 50%;
+}
+
+nav ul .start-contact, nav ul .active-contact {
+  left: 75%;
+}
+
+/* hoverrrrrrrrrrr */
+nav ul .start-home {
+  left: 0;
+}
+
+nav ul li:nth-child(1):hover ~ .animation {
+  left: 0;
+}
+
+nav ul li:nth-child(2):hover ~ .animation {
+  left: 25%;
+}
+
+nav ul li:nth-child(3):hover ~ .animation {
+  left: 50%;
+}
+
+nav ul li:nth-child(4):hover ~ .animation {
+  left: 75%;
 }
 
 .landing-greeting{
