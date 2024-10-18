@@ -1,0 +1,126 @@
+*{  
+  font-family: 'CaskaydiaMono nerd font', 'JetBrains Mono';
+  color: white;
+}
+
+body{
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgb(39, 38, 51) 0%, rgba(0,0,0,1) 0%, rgba(3,4,11,0.8643790279783788) 100%, rgba(2,58,70,1) 100%, rgba(0,0,0,1) 100%);
+}
+
+/*MARK: header
+ */
+
+header{
+  color: white;
+  height: 10vh;
+  display: flex;
+  align-items: center;justify-content: center;
+  h1{
+    width: 15%;
+  }
+}
+
+header nav{
+  width: 40%;
+} 
+header nav ul {
+  color: white;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  li{
+    cursor: pointer;
+    list-style-type: none;
+    a{
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
+
+nav ul .animation{
+  position: absolute;
+  height: 3px;
+  border-radius: 1px;
+  top: 0;
+  color: white;
+  background-color: white !important;
+  width: 100px;
+}
+
+.landing-greeting{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  h1{
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    margin: 0 auto; 
+  }
+}
+/*MARK: introduction 
+*/
+.intro-container{
+  width: 80%;
+  padding-block: 4vh;
+  margin: 25vh auto;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: rgb(37, 36, 36);
+  border-radius: 4px;
+}
+.left-intro{
+  width: 40%;
+  img{
+    width: 70%;
+    border-radius: 50%;
+  }
+}
+.right-intro{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  p{
+    line-height: 5vh;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+}
+.intro-message-container{
+  height: 40%;
+  width: 100%;
+}
+.intro-icon-container{
+  height: 20%;
+  display: flex;
+  width: 40%;
+  justify-content: space-evenly;
+}
+.intro-icons{
+  transition: all 150ms ease-in-out;  
+  cursor: pointer;
+  border-radius: 50%;
+}
+.intro-icons:hover{
+  font-size: 3rem;
+  color: red !important;
+}
+.intro-icons:active{
+  font-size: 2.5rem;
+}
+
+
+/*MARK: Responsive 
+ */
+@media screen and (max-width: 768px) {
+  header{
+    
+  }
+}
+
+
+
