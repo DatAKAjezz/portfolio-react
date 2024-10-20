@@ -1,34 +1,38 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub,faSquareTwitter, faInstagram} from '@fortawesome/free-brands-svg-icons';  
+import { faGithub, faSquareTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import useDisplayMessage from './Hooks/useDisplayMessage';
 
 
 function App() {
-
   const [activeItem, setActiveItem] = useState('home');
+  const introMessage = "hi, i'm jezz...";
+  const [showIntroMessage, setShowIntroMessage] = useState(false);
 
-  const quote = "'"
-  const message = "hi, jezz is here...";
-  const [displayedMessage, setDisplayedMessage] = useState('');
-  const [visibilityState, setVisibilityState] = useState('visible');
+  const { displayedMessage: displayedIntroMessage, visibilityState } = useDisplayMessage(introMessage, 120, "intro");
+
+  const { displayedMessage: introMessage1 } = useDisplayMessage(
+    showIntroMessage ? "My name is Dat 'jezz' Hoang Tan" : "", 
+    50, 
+    "after-intro"
+  );
+
+  const { displayedMessage: introMessage2 } = useDisplayMessage(
+    showIntroMessage ? "Future JS FullStack Developer" : "",
+    90,
+    "after-intro"
+  )
+
+  const { displayedMessage: introMessage3 } = useDisplayMessage(
+    showIntroMessage ? "From Dong Hoi City, Viet Nam" : "",
+    60,
+    "after-intro"
+  )
 
   useEffect(() => {
-    if (displayedMessage.length < message.length) {
-      const timer = setTimeout(() => {
-        setDisplayedMessage(message.slice(0, displayedMessage.length + 1));
-      }, 120);
-      return () => clearTimeout(timer);
-    } else if (displayedMessage.length === message.length) {
-      const timer = setTimeout(() => setVisibilityState('fading'), 1500);
-      return () => clearTimeout(timer);
-    }
-  }, [displayedMessage, message]);
-
-  useEffect(() => {
-    if (visibilityState === 'fading') {
-      const timer = setTimeout(() => setVisibilityState('hidden'), 1000);
-      return () => clearTimeout(timer);
+    if (visibilityState === "hidden") {
+        setShowIntroMessage(true);
     }
   }, [visibilityState]);
 
@@ -42,12 +46,12 @@ function App() {
           }} 
           className='landing-greeting'
         >
-          <h1>{displayedMessage}</h1>
+          <h1>{displayedIntroMessage}</h1>
         </div>
       ) : (
         <div>
-          <header className="header">
-            <h1>_jezz</h1>
+          <header className="header header-animation">
+            <h1 style={{fontSize: "2.4rem"}}>_jezz</h1>
             <nav>
               <ul>
                 <li onClick={() => setActiveItem('home')}>Home</li>
@@ -61,22 +65,23 @@ function App() {
 
           <div className="intro-container">
             <div className='left-intro'>
-              <img src="./intro.png" alt="Intro" />
+              <div className= "left-intro-image">
+                <img className='intro-image-popup' src="./intro.png" alt="Intro" />
+              </div>
             </div>
-            <div className='right-intro'>
+            <div className='right-intro '>
               <div className='intro-message'>
-                <p>My name is Dat {quote}jezz{quote} Hoang Tan</p>
-                <p>Future JS FullStack Developer</p>
-                <p style={{fontSize: '1.2rem'}}>From Dong Hoi City, Viet Nam.</p>
+                <p>{introMessage1}.</p>
+                <p>{introMessage2}.</p>
+                <p style={{fontSize: '1.2rem'}}>{introMessage3}.</p>
               </div>
               <div className='intro-icon-container'>
-                <FontAwesomeIcon className = "intro-icons" icon={faGithub} fontSize="2.5rem"/>                
-                <FontAwesomeIcon className = "intro-icons" icon={faSquareTwitter} fontSize="2.5rem"/>
-                <FontAwesomeIcon className = "intro-icons" icon={faInstagram} fontSize="2.5rem"/>                
+                <FontAwesomeIcon className="intro-icons icon-animation" icon={faGithub} fontSize="2.5rem"/>           
+                <FontAwesomeIcon className="intro-icons icon-animation" icon={faSquareTwitter} fontSize="2.5rem"/>
+                <FontAwesomeIcon className="intro-icons icon-animation" icon={faInstagram} fontSize="2.5rem"/>                
               </div>
             </div>
           </div>
-
         </div>
       )}
     </div>
