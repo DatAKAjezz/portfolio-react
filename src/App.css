@@ -196,14 +196,25 @@ nav ul li:nth-child(4):hover ~ .animation {
   justify-content: space-evenly;
 }
 .intro-icons{
+  display: inline-flex;
   transition: all 150ms ease-in-out;  
   cursor: pointer;
-  border-radius: 50%;
+  font-size: 2.5rem;
 }
 .intro-icons:hover{
   font-size: 3rem;
-  color: blue !important;
 }
+.intro-icons:nth-child(1){ border-radius: 55%; }
+.intro-icons:nth-child(1):hover{
+  fill: black;
+  background-color: white;
+}
+
+.intro-icons:nth-child(2):hover{
+  fill: black;
+  background-color: white;
+}
+
 .intro-icons:active{
   font-size: 2.5rem;
 }

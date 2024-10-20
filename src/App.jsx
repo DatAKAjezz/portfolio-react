@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faSquareTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import useDisplayMessage from './Hooks/useDisplayMessage';
+import { FaGithub, FaInstagram, FaTwitterSquare } from 'react-icons/fa';
 
 
 function App() {
@@ -76,9 +75,9 @@ function App() {
                 <p style={{fontSize: '1.2rem'}}>{introMessage3}.</p>
               </div>
               <div className='intro-icon-container'>
-                <FontAwesomeIcon className="intro-icons icon-animation" icon={faGithub} fontSize="2.5rem"/>           
-                <FontAwesomeIcon className="intro-icons icon-animation" icon={faSquareTwitter} fontSize="2.5rem"/>
-                <FontAwesomeIcon className="intro-icons icon-animation" icon={faInstagram} fontSize="2.5rem"/>                
+                <FaGithub className="intro-icons icon-animation"/> 
+                <FaTwitterSquare className="intro-icons icon-animation" />
+                <FaInstagram className="intro-icons icon-animation" />              
               </div>
             </div>
           </div>
