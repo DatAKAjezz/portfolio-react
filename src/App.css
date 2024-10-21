@@ -5,7 +5,7 @@
 
 body{
   background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgb(39, 38, 51) 0%, rgba(0,0,0,1) 0%, rgba(3,4,11,0.8643790279783788) 100%, rgba(2,58,70,1) 100%, rgba(0,0,0,1) 100%);
+  background: linear-gradient(90deg, rgb(39, 38, 51) 0%, rgba(0,0,0,1) 0%, rgba(3,4,11,0.8643790279783788) 100%, rgb(0, 0, 0) 100%, rgba(0,0,0,1) 100%);
 }
 
 /*MARK: header
@@ -13,6 +13,8 @@ body{
 
 header{
   position: fixed;
+  z-index: 99;
+  background-color: rgb(16, 15, 15);
   top: 0;
   width: 100%;
   color: white;
@@ -56,6 +58,7 @@ nav ul li {
   text-align: center;
   padding: 10px 0;
   cursor: pointer;
+  user-select: none;
 }
 
 nav ul .animation {
@@ -67,7 +70,7 @@ nav ul .animation {
   transition: all 0.5s ease;
 }
 
-/* activeeeeeeeeeeee */
+/* nav - activeeeeeeeeeeee */
 nav ul .start-home, nav ul .active-home {
   left: 0;
 }
@@ -84,7 +87,7 @@ nav ul .start-contact, nav ul .active-contact {
   left: 75%;
 }
 
-/* hoverrrrrrrrrrr */
+/* nav - hoverrrrrrrrrrr */
 nav ul .start-home {
   left: 0;
 }
@@ -119,10 +122,17 @@ nav ul li:nth-child(4):hover ~ .animation {
 }
 /*MARK: introduction 
 */
-.intro-container{
+
+.section1{
   width: 75%;
+  height: 500px;
+  margin: 0 auto;
+  margin-block: 25vh;
+}
+
+.intro-container{
+  width: 100%;
   padding-block: 7vh;
-  margin: 25vh auto;
   display: flex;
   justify-content: space-evenly;
   background-color: rgb(37, 36, 36);
@@ -204,15 +214,15 @@ nav ul li:nth-child(4):hover ~ .animation {
 .intro-icons:hover{
   font-size: 3rem;
 }
-.intro-icons:nth-child(1){ border-radius: 55%; }
-.intro-icons:nth-child(1):hover{
-  fill: black;
-  background-color: white;
-}
 
-.intro-icons:nth-child(2):hover{
-  fill: black;
-  background-color: white;
+.github-icon:hover{
+  fill: rgb(149, 147, 147);
+}
+.twitter-icon:hover{
+  fill: rgb(28, 156, 234);
+}
+.insta-icon:hover{
+ fill: rgb(195, 5, 91);
 }
 
 .intro-icons:active{
@@ -247,13 +257,7 @@ nav ul li:nth-child(4):hover ~ .animation {
   }
 }
 
-/*MARK: Responsive 
- */
-@media screen and (max-width: 768px) {
-  header{
-    
-  }
-}
+
 
 
 
