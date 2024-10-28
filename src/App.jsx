@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
-import './App.css';
+import './CSS/App.css';
 import useDisplayMessage from './Hooks/useDisplayMessage';
-import { FaGithub, FaInstagram, FaTwitterSquare } from 'react-icons/fa';
+import { FaGithub, FaInstagram, FaTwitterSquare, FaLinkedin } from 'react-icons/fa';
 import SkillContainer from './components/SkillContainer';
-import { useScroll } from 'framer-motion'
+import { motion, useScroll } from 'framer-motion'
+import Contact from './components/Contact';
 
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
   const { displayedMessage: displayedIntroMessage, visibilityState } = useDisplayMessage(introMessage, 120, "intro");
 
   const { displayedMessage: introMessage1 } = useDisplayMessage(
-    showIntroMessage ? "My name is Dat 'jezz' Hoang Tan" : "", 
+    showIntroMessage ? "HI, my name is Dat 'jezz' Hoang Tan" : "", 
     50, 
     "after-intro"
   );
@@ -80,7 +81,16 @@ function App() {
             </nav>
           </header>
         {/*_____________________________________INTRO_______________________________________ */}
-          <div className='section1'>
+          <motion.div className='section1' 
+                      whileInView={{opacity: [0, 1], y: [150, 0]}}
+                      transition={{duration: 0.4}}
+                      // onViewportEnter={() => {
+                      //   if (sectionCount < 2) { 
+                      //     setSectionCount(prev => prev + 1);
+                      //   }
+                      // }}
+                      viewport={{once: 'true'}}
+          >
             <div className="intro-container">
             <h1 className = "container-tags"> {tagMessage} </h1>
               <div className='left-intro'>
@@ -90,7 +100,7 @@ function App() {
               </div>
               <div className='right-intro '>
                 <div className='intro-message'>
-                  <p>{introMessage1}.</p>
+                  <p style={{fontSize: '1.3rem'}}>{introMessage1}.</p>
                   <p>{introMessage2}.</p>
                   <p style={{fontSize: '1.2rem'}}>{introMessage3}.</p>
                 </div>
@@ -99,12 +109,18 @@ function App() {
                     <FaGithub className='github-icon intro-icons icon-animation'/>
                   </a>                
                   <FaTwitterSquare className="twitter-icon intro-icons icon-animation"/>
-                  <FaInstagram className="insta-icon intro-icons icon-animation" />             
+                  <FaInstagram className="insta-icon intro-icons icon-animation" /> 
+                  <FaLinkedin className="linkedin-icon intro-icons icon-animation" />          
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
+          {/* Skills */}
           <SkillContainer scrollYProgress = {scrollYProgress}/>
+
+          {/* Contact */}
+          <Contact/>
+
         </div>
       )}
     </div>

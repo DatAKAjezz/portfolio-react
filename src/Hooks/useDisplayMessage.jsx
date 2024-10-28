@@ -12,13 +12,10 @@ const useDisplayMessage = (message, delay, typeOfDisplay) => {
           setDisplayedMessage(message.slice(0, displayedMessage.length + 1));
         }, delay);
         return () => clearTimeout(timer);
-      } else if (
-        displayedMessage.length === message.length &&
-        typeOfDisplay === "intro"
-      ) {
-        const timer = setTimeout(() => setVisibilityState("fading"), 1500);
-        return () => clearTimeout(timer);
-    };
+      } else if (displayedMessage.length === message.length && typeOfDisplay === "intro") {
+                const timer = setTimeout(() => setVisibilityState("fading"), 1500);
+                return () => clearTimeout(timer);
+              };
 
   }, [displayedMessage, message, delay, typeOfDisplay]);
 
