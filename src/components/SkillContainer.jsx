@@ -6,7 +6,7 @@ import useDisplayMessage from './../Hooks/useDisplayMessage';
 
 const SkillContainer = () => {
 
-  let skillMessage = "Skills";
+  let skillMessage = "skills";
   const [isSkillDisplayed, setIsSkillDisplayed] = useState(false);
   const { displayedMessage: displayedSkillMessage } = useDisplayMessage(
     isSkillDisplayed ? skillMessage : "", 120, "after-intro"

@@ -1,268 +1,331 @@
-*{  
-  font-family: 'CaskaydiaMono nerd font', 'JetBrains Mono';
-  color: white;
-}
-
-body{
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgb(39, 38, 51) 0%, rgba(0,0,0,1) 0%, rgba(3,4,11,0.8643790279783788) 100%, rgb(0, 0, 0) 100%, rgba(0,0,0,1) 100%);
-}
-
-/*MARK: header
- */
-
-header{
-  position: fixed;
-  z-index: 99;
-  background-color: rgb(19, 18, 18);
-  top: 0;
-  width: 100%;
-  color: white;
-  height: 10vh;
-  display: flex;
-  align-items: center;justify-content: center;
-  border-bottom: 1px solid  rgb(42, 40, 40);
-  transform: translateY(-70px);
-  animation: header-popup 0.3s ease forwards;
-  animation-delay: 0.1s;
-  h1{
-    width: 15%;
-  }
-}
-@keyframes header-popup {
-  from{
-    opacity: 0;
-    transform: translateY(-70px);
-  }
-  to{
-    opacity: 1;
-    transform: translateY(0px);
-  }
-}
-
-nav{
-  width: 40%;
-} 
-nav ul {
-  position: relative;
-  display: flex;
-  justify-content: space-around;
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-}
-
-nav ul li {
-  font-size: 1.1rem;
-  flex: 1;
-  text-align: center;
-  padding: 10px 0;
-  cursor: pointer;
-  user-select: none;
-}
-
-nav ul .animation {
-  position: absolute;
-  height: 3px;
-  width: 25%;
-  background-color: white;
-  bottom: 0;
-  transition: all 0.5s ease;
-}
-
-/* nav - activeeeeeeeeeeee */
-nav ul .start-home, nav ul .active-home {
-  left: 0;
-}
-
-nav ul .start-skill, nav ul .active-skill {
-  left: 25%;
-}
-
-nav ul .start-experience, nav ul .active-experience {
-  left: 50%;
-}
-
-nav ul .start-contact, nav ul .active-contact {
-  left: 75%;
-}
-
-/* nav - hoverrrrrrrrrrr */
-nav ul .start-home {
-  left: 0;
-}
-
-nav ul li:nth-child(1):hover ~ .animation {
-  left: 0;
-}
-
-nav ul li:nth-child(2):hover ~ .animation {
-  left: 25%;
-}
-
-nav ul li:nth-child(3):hover ~ .animation {
-  left: 50%;
-}
-
-nav ul li:nth-child(4):hover ~ .animation {
-  left: 75%;
-}
-
-.landing-greeting{
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  h1{
-    font-size: 3rem;
+  *{  
+    font-family: 'CaskaydiaMono nerd font', 'JetBrains Mono';
     color: white;
-    text-align: center;
-    margin: 0 auto; 
   }
-}
-/*MARK: introduction 
-*/
 
-.section1{
-  width: 75%;
-  height: 500px;
-  margin: 0 auto;
-  margin-block: 25vh;
-}
-
-.intro-container{
-  width: 100%;
-  padding-block: 7vh;
-  display: flex;
-  justify-content: space-evenly;
-  background-color: rgb(37, 36, 36);
-  border-radius: 4px;
-  position: relative;
-  animation: intro-container-animation 0.4s ease-in-out forwards;
-
-}
-
-/* tam thoi bo ra */
-@keyframes intro-container-animation {
-  from{
-    opacity: 0;
+  body{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgb(39, 38, 51) 0%, rgba(0,0,0,1) 0%, rgba(3,4,11,0.8643790279783788) 100%, rgb(0, 0, 0) 100%, rgba(0,0,0,1) 100%);
   }
-  to{
-    opacity: 1;
-  }
-}
 
-.left-intro{
-  width: 40%;
-  display: flex;
-  justify-content: center;align-items: center;
-}
-.left-intro-image{
-  width: 75%;
-  margin: 0 auto;
-  overflow: hidden;
-  border-radius: 50%;
-  img{
-    margin: 0 auto;
-    opacity: 0;
-    animation: intro-image-popup 0.3s ease-in-out forwards;
-    animation-delay: 0.15s;
+  /*MARK: header
+  */
+
+  header{
+    position: fixed;
+    z-index: 99;
+    background-color: rgb(19, 18, 18);
+    top: 0;
     width: 100%;
+    color: white;
+    height: 10vh;
+    display: flex;
+    align-items: center;justify-content: center;
+    border-bottom: 1px solid  rgb(42, 40, 40);
+    transform: translateY(-70px);
+    animation: header-popup 0.3s ease forwards;
+    animation-delay: 0.1s;
+    h1{
+      width: 15%;
+    }
+  }
+  @keyframes header-popup {
+    from{
+      opacity: 0;
+      transform: translateY(-70px);
+    }
+    to{
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
+  nav{
+    width: 40%;
+  } 
+  nav ul {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+
+  nav ul li {
+    font-size: 1.1rem;
+    flex: 1;
+    text-align: center;
+    padding: 10px 0;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  nav ul .animation {
+    position: absolute;
+    height: 3px;
+    width: 25%;
+    background-color: white;
+    bottom: 0;
+    transition: all 0.5s ease;
+  }
+
+  /* nav - activeeeeeeeeeeee */
+  nav ul .start-home, nav ul .active-home {
+    left: 0;
+  }
+
+  nav ul .start-skill, nav ul .active-skill {
+    left: 25%;
+  }
+
+  nav ul .start-experience, nav ul .active-experience {
+    left: 50%;
+  }
+
+  nav ul .start-contact, nav ul .active-contact {
+    left: 75%;
+  }
+
+  /* nav - hoverrrrrrrrrrr */
+  nav ul .start-home {
+    left: 0;
+  }
+
+  nav ul li{
+    transition: all 0.4s ease;
+  }
+
+  nav ul li:hover{
+    color: cyan;
+  }
+
+  nav ul li:nth-child(1):hover ~ .animation {
+    left: 0;
+  }
+
+  nav ul li:nth-child(2):hover ~ .animation {
+    left: 25%;
+  }
+
+  nav ul li:nth-child(3):hover ~ .animation {
+    left: 50%;
+  }
+
+  nav ul li:nth-child(4):hover ~ .animation {
+    left: 75%;
+  }
+
+  .landing-greeting{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    h1{
+      font-size: 3rem;
+      color: white;
+      text-align: center;
+      margin: 0 auto; 
+    }
+  }
+  /*MARK: introduction 
+  */
+
+  .section1{
+    width: 75%;
+    height: 500px;
+    margin: 0 auto;
+    margin-block: 25vh;
+  }
+
+  .intro-container{
+    width: 100%;
+    padding-top: 10vh;
+    padding-bottom: 5vh;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(37, 36, 36);
+    border-radius: 4px;
+    position: relative;
+    animation: intro-container-animation 0.4s ease-in-out forwards;
+
+  }
+
+  /* tam thoi bo ra */
+  @keyframes intro-container-animation {
+    from{
+      opacity: 0;
+    }
+    to{
+      opacity: 1;
+    }
+  }
+
+  .left-intro{
+    width: 40%;
+    display: flex;
+    justify-content: center;align-items: center;
+  }
+  .left-intro-image{
+    width: 75%;
+    margin: 0 auto;
+    overflow: hidden;
     border-radius: 50%;
-    transition: all 0.2s ease-in-out;
+    img{
+      margin: 0 auto;
+      opacity: 0;
+      animation: intro-image-popup 0.3s ease-in-out forwards;
+      animation-delay: 0.15s;
+      width: 100%;
+      border-radius: 50%;
+      transition: all 0.2s ease-in-out;
+    }
+    img:hover{
+      transform: scale(1.05);
+    }
   }
-  img:hover{
-    transform: scale(1.05);
-  }
-}
 
-@keyframes intro-image-popup{
-  from{
+  @keyframes intro-image-popup{
+    from{
+      opacity: 0;
+    }
+    to{
+      opacity: 1;
+    }
+  }
+
+  .right-intro{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    p{
+      line-height: 4vh;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+  }
+  .intro-message-container{
+    height: 40%;
+    width: 100%;
+  }
+  .intro-icon-container{
+    height: 20%;
+    display: flex;
+    width: 45%;
+    justify-content: space-evenly;
+  }
+  .intro-icons{
+    display: inline-flex;
+    transition: all 150ms ease-in-out;  
+    cursor: pointer;
+    font-size: 2.5rem;
+  }
+  .intro-icons:hover{
+    font-size: 3rem;
+  }
+
+  .github-icon:hover{
+    fill: rgb(149, 147, 147);
+  }
+  .twitter-icon:hover{
+    fill: rgb(28, 156, 234);
+  }
+  .insta-icon:hover{
+  fill: rgb(195, 5, 91);
+  }
+  .linkedin-icon:hover{
+    fill: rgb(29, 108, 244);
+  }
+
+  .intro-icons:active{
+    font-size: 2.5rem;
+  }
+
+  .icon-animation{
     opacity: 0;
+    transform: translateY(20px);
+    animation: icon-popup 0.2s ease-in-out forwards;
+    animation-delay: 0.5s;
   }
-  to{
-    opacity: 1;
+
+  .icon-animation:nth-child(1){
+    animation-delay: 0.3s;
   }
+  .icon-animation:nth-child(2){
+    animation-delay: 0.6s;
+  }
+  .icon-animation:nth-child(3){
+    animation-delay: 0.9s;
+  }
+  .icon-animation:nth-child(4){
+    animation-delay: 1.2s;
+  }
+
+  @keyframes icon-popup {
+    from{
+      opacity: 0  ;
+      transform: translateY(20px);
+    }
+    to{
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* MARK: responsive 
+  */
+  /* Ẩn menu gốc khi ở màn hình nhỏ */
+/* CSS cho nút menu */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
 }
 
-.right-intro{
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  p{
-    line-height: 4vh;
-    font-weight: bold;
+/* Khi ở màn hình nhỏ, hiển thị nút menu */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 100;
+  }
+
+  /* Ẩn menu gốc và chỉ hiển thị khi nhấn nút */
+  nav {
+    display: none;
+    position: absolute;
+    top: 10vh;
+    right: 0;
+    background-color: rgb(19, 18, 18);
+    width: 100%;
+    height: 90vh;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 2rem;
+  }
+
+  /* Mở menu khi có lớp .nav-open */
+  .nav-open nav {
+    display: flex;
+  }
+
+  /* Kiểu cho các mục trong menu khi ở màn hình nhỏ */
+  nav ul {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  nav ul li {
+    padding: 15px 0;
     font-size: 1.5rem;
   }
 }
-.intro-message-container{
-  height: 40%;
-  width: 100%;
-}
-.intro-icon-container{
-  height: 20%;
-  display: flex;
-  width: 45%;
-  justify-content: space-evenly;
-}
-.intro-icons{
-  display: inline-flex;
-  transition: all 150ms ease-in-out;  
-  cursor: pointer;
-  font-size: 2.5rem;
-}
-.intro-icons:hover{
-  font-size: 3rem;
-}
 
-.github-icon:hover{
-  fill: rgb(149, 147, 147);
-}
-.twitter-icon:hover{
-  fill: rgb(28, 156, 234);
-}
-.insta-icon:hover{
- fill: rgb(195, 5, 91);
-}
-.linkedin-icon:hover{
-  fill: rgb(29, 108, 244);
-}
 
-.intro-icons:active{
-  font-size: 2.5rem;
-}
-
-.icon-animation{
-  opacity: 0;
-  transform: translateY(20px);
-  animation: icon-popup 0.2s ease-in-out forwards;
-  animation-delay: 0.5s;
-}
-
-.icon-animation:nth-child(1){
-  animation-delay: 0.3s;
-}
-.icon-animation:nth-child(2){
-  animation-delay: 0.6s;
-}
-.icon-animation:nth-child(3){
-  animation-delay: 0.9s;
-}
-.icon-animation:nth-child(4){
-  animation-delay: 1.2s;
-}
-
-@keyframes icon-popup {
-  from{
-    opacity: 0  ;
-    transform: translateY(20px);
-  }
-  to{
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 
 
