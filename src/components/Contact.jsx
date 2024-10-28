@@ -32,39 +32,63 @@ const Contact = () => {
   };
 
   return (
-    <div className='contact-container'>
-        <div className = "left-contact" style={{paddingLeft: '5%'}}>
-        
-            <h3>Contact Me via:</h3>
-        
+    <div className='contact-section' id = "contact-section">
+        <div className='contact-wrapper'>
+            <div className='contact-title-container'>
+                <div className='borders'></div>
+                <div className='contact-title'>contact</div>
+                <div className='borders'></div>
+            </div>  
+
+            <div className='contact-container'>
+                <div className = "left-contact" style={{paddingLeft: '5%'}}>
+                
+                    <div>Contact Me via</div>
+                    <div className='contact-icon-container'>
+                        <div><img src = 'facebook.png'></img></div>
+                        <div><img src = 'gmail.png'></img></div>
+                    </div>
+                
+                </div>
+                <div className= "right-contact">
+                    <h3>Send a form if you interested in collaboration!</h3>
+                    <form onSubmit={handleSubmit} className="contact-form">
+                    <div>
+                        <label>Name:</label>
+                        <input
+                            type="text"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label>Email:</label>
+                        <input
+                            type="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label>Message:</label>
+                        <textarea
+                            name="message"
+                            value={formData.message}
+                            onChange={handleChange}
+                            required
+                        ></textarea>
+                    </div>
+                    <button type="submit">Send</button>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div className= "right-contact">
-            <form onSubmit={handleSubmit} className="contact-form">
-            <label>Name:</label>
-            <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-            />
-            <label>Email:</label>
-            <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-            />
-            <label>Message:</label>
-            <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-            ></textarea>
-            <button type="submit">Send</button>
-            </form>
+        <div className='sayonara'>
+            Thanks for scrolling !
         </div>
     </div>
   );

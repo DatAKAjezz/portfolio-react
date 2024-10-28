@@ -22,7 +22,7 @@ const SkillContainer = () => {
         transition={{ duration: 0.4 }}
         viewport={{once: 'true'}}
       >
-        <h1 className="container-tags">{displayedSkillMessage}</h1>
+        <h1 className="container-tags" style={{fontSize: '1.8rem'}}>{displayedSkillMessage}</h1>
         <motion.div 
           className="left-skill" 
           whileInView={() => {
@@ -39,7 +39,7 @@ const SkillContainer = () => {
           <div className="skill-groups">
             <div>
               <h3 
-                style={{ fontSize: "1.5rem", textAlign: "center", color: "white" }}
+                style={{ fontSize: "1.5rem", textAlign: "center", color: "cyan" }}
                 className="kanit-semibold"
                 ref = {skillTitleRef}
               >

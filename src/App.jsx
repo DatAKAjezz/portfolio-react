@@ -45,8 +45,8 @@ function App() {
     }
   }, [visibilityState]);
 
-  const scrollToSectionWithMargin = () => {
-    const element = document.getElementById("skill-section");
+  const scrollToSectionWithMargin = (section) => {
+    const element = document.getElementById(section);
     const yOffset = -180;
     const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
   
@@ -88,7 +88,7 @@ function App() {
                 <li onClick={() =>{
                   setActiveItem('skill');
                   setIsNavOpen(false); // Đóng menu sau khi chọn mục
-                  scrollToSectionWithMargin();
+                  scrollToSectionWithMargin("skill-section");
                 }} >Skill</li>
                 <li onClick={() => {
                   setActiveItem('experience');
@@ -96,6 +96,7 @@ function App() {
                 }}>Experiences</li>
                 <li onClick={() => {
                   setActiveItem('contact');
+                  scrollToSectionWithMargin("contact-section")
                   setIsNavOpen(false); // Đóng menu sau khi chọn mục
                 }}>Contact</li>
                 <div className={`animation active-${activeItem}`}></div>
@@ -109,7 +110,7 @@ function App() {
                       viewport={{once: 'true'}}
           >
             <div className="intro-container">
-              <h1 className="container-tags">{tagMessage}</h1>
+              <h1 className="container-tags" style={{fontSize: '1.8rem'}}>{tagMessage}</h1>
               <div className='right-intro '>
                 <div className='intro-message'>
                   <p style={{fontSize: '1.3rem'}}>{introMessage1}.</p>
