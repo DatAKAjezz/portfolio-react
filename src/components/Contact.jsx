@@ -88,7 +88,8 @@ const Contact = () => {
             </div>
         </div>
         <div className='sayonara'>
-            Thanks for scrolling !
+            Thanks for scrolling ! ( On developing )
+
         </div>
     </div>
   );
