@@ -68,7 +68,7 @@ function App() {
       ) : (
         <div>
           <header className="header header-animation">
-            <h1 style={{fontSize: "2.4rem"}}>_jezz</h1>
+            <h1 style={{fontSize: "2.4rem", zIndex: "99"}}>_jezz</h1>
 
             {/* Icon menu */}
             <div className="menu-toggle" onClick={() => setIsNavOpen(!isNavOpen)}>
@@ -77,7 +77,8 @@ function App() {
 
             <nav>
               <ul>
-                <li onClick={() =>{
+                <li onClick={(e) =>{  
+                  e.stopPropagation();
                   setActiveItem('home');
                   setIsNavOpen(false); // Đóng menu sau khi chọn mục
                   window.scrollTo({
@@ -85,16 +86,18 @@ function App() {
                     behavior: 'smooth'
                   });
                 }} >Introduction</li>
-                <li onClick={() =>{
+                <li onClick={(e) =>{
+                  e.stopPropagation();
                   setActiveItem('skill');
                   setIsNavOpen(false); // Đóng menu sau khi chọn mục
                   scrollToSectionWithMargin("skill-section");
                 }} >Skill</li>
-                <li onClick={() => {
+                <li onClick={(e) => {
+                  e.stopPropagation();
                   setActiveItem('experience');
                   setIsNavOpen(false); // Đóng menu sau khi chọn mục
                 }}>Experiences</li>
-                <li onClick={() => {
+                <li onClick={(e) => {
                   setActiveItem('contact');
                   scrollToSectionWithMargin("contact-section")
                   setIsNavOpen(false); // Đóng menu sau khi chọn mục
@@ -111,7 +114,7 @@ function App() {
           >
             <div className="intro-container">
               <h1 className="container-tags" style={{fontSize: '1.8rem'}}>{tagMessage}</h1>
-              <div className='right-intro '>
+              <div className='right-intro top-intro '>
                 <div className='intro-message'>
                   <p style={{fontSize: '1.3rem'}}>{introMessage1}.</p>
                   <p style={{color: 'cyan'}}>{introMessage2}.</p>
@@ -127,9 +130,9 @@ function App() {
                 </div>
               </div>
 
-              <div className='left-intro'>
+              <div className='left-intro bottom-intro'>
                 <div className="left-intro-image">
-                  <img className='intro-image-popup' src="./intro.png" alt="Intro" />
+                  <img className='intro-image-popup' src="./avt.jpg" alt="Intro" />
                 </div>
               </div>
 

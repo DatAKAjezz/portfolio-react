@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import '../CSS/Contact.css'
+import { easeIn, easeInOut, motion } from "framer-motion";
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -21,7 +23,7 @@ const Contact = () => {
       formData,
       'yIDjG3dEiU-ztXmd1'           
     )
-    .then((response) => {
+    .then((res) => {
       alert('Message sent successfully!');
       setFormData({ name: '', email: '', message: '' });
     })
@@ -32,7 +34,7 @@ const Contact = () => {
   };
 
   return (
-    <div className='contact-section' id = "contact-section">
+    <div id = 'contact-section'>
         <div className='contact-wrapper'>
             <div className='contact-title-container'>
                 <div className='borders'></div>
@@ -41,16 +43,23 @@ const Contact = () => {
             </div>  
 
             <div className='contact-container'>
-                <div className = "left-contact" style={{paddingLeft: '5%'}}>
-                
+                <motion.div 
+                  whileInView={{x: [-400, 0]}}
+                  transition={{duration: 0.5}}     
+                  viewport={{once: true}}             
+                  className = "left-contact" style={{paddingLeft: '5%'}}>
                     <div>Contact Me via</div>
                     <div className='contact-icon-container'>
                         <div><img src = 'facebook.png'></img></div>
                         <div><img src = 'gmail.png'></img></div>
                     </div>
                 
-                </div>
-                <div className= "right-contact">
+                </motion.div>
+                <motion.div  
+                    whileInView={{x: [400, 0]}}
+                    transition={{duration: 0.5}}
+                    viewport={{once: true}}
+                    className= "right-contact">
                     <h3>Send a form if you interested in collaboration!</h3>
                     <form onSubmit={handleSubmit} className="contact-form">
                     <div>
@@ -84,12 +93,11 @@ const Contact = () => {
                     </div>
                     <button type="submit">Send</button>
                     </form>
-                </div>
+                </motion.div>
             </div>
         </div>
         <div className='sayonara'>
             Thanks for scrolling ! ( On developing )
-
         </div>
     </div>
   );
