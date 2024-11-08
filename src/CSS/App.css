@@ -1,5 +1,5 @@
   *{  
-    font-family: 'CaskaydiaMono nerd font', 'JetBrains Mono', monospace;
+    font-family: cursive;
     color: white;
     padding: 0;
     margin: 0;
@@ -275,7 +275,7 @@
     }
   }
 
-  /* MARK: responsive 
+  /* MARK: responsi
   */
   /* Ẩn menu gốc khi ở màn hình nhỏ */
 /* CSS cho nút menu */
@@ -288,8 +288,27 @@
 
 /* Khi ở màn hình nhỏ, hiển thị nút menu */
 @media (max-width: 768px) {
+
+  .header{
+    >h1{
+      text-align: center !important;
+      font-size: 1.6rem !important;
+      margin: 0 auto;
+      width: 20%;
+    }
+    .navbar-toggle-button{
+      width: 80%;
+    }
+  }
+
   nav ul .animation{
     display: none;
+  }
+  nav ul >li{
+    font-size: 1rem !important;
+  }
+  nav ul >li:hover{
+    background-color: rgb(67, 65, 65) !important;
   }
   .menu-toggle {
     display: block;
@@ -303,7 +322,7 @@
   nav {
     height: 0;
     position: absolute;
-    top: 6vh;
+    top: 4vh;
     right: 0;
     background-color: rgb(19, 18, 18);
     width: 100%;
@@ -312,11 +331,12 @@
     padding-top: 2rem;
     transition: all 0.2s ease;
     overflow: hidden;
+    border-radius: 0 5px 5px 0;
   }
 
   /* Mở menu khi có lớp .nav-open */
   .nav-open nav {
-    height: 36vh;
+    height: 31vh;
   }
 
   /* Kiểu cho các mục trong menu khi ở màn hình nhỏ */
@@ -349,18 +369,25 @@
     }
   }
 
+  /* Tags */
+  .container-tags{
+    width: 30%;
+    height: 5%;
+    font-size: 1rem !important;
+  }
+
   .intro-message{
     width: 95%;
     margin: 0 auto;
     text-align: center;
     >p:nth-child(1){
-      font-size: 1rem !important;
+      font-size: 0.7rem !important;
     }
     >p:nth-child(2){
-      font-size: 1.2rem !important;
+      font-size: 0.8rem !important;
     }
     >p:nth-child(3){
-      font-size: 1rem !important;
+      font-size: 0.7rem !important;
     }
     >p{
       padding-block: 1vh;
@@ -369,6 +396,17 @@
 
   .intro-icon-container{
     margin: 0 auto;
+  }
+
+  .intro-icons{
+    width: 20%;
+  }
+
+  .github-icon-container{
+    width: 20% !important;
+  }
+  .github-icon{
+    width: 100%;
   }
 
 }

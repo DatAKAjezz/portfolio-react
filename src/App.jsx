@@ -70,9 +70,9 @@ function App() {
           <header className="header header-animation">
             <h1 style={{fontSize: "2.4rem", zIndex: "99"}}>_jezz</h1>
 
-            {/* Icon menu */}
+            {/* Icon menu */} 
             <div className="menu-toggle" onClick={() => setIsNavOpen(!isNavOpen)}>
-              <FaBars />
+              <FaBars className='navbar-toggle-button'/>
             </div>
 
             <nav>
@@ -121,7 +121,7 @@ function App() {
                   <p style={{fontSize: '1.2rem'}}>{introMessage3}.</p>
                 </div>
                 <div className='intro-icon-container'>
-                  <a href="https://github.com/DatAKAjezz" target="_blank" rel="noopener noreferrer">
+                  <a href="https://github.com/DatAKAjezz" className = 'github-icon-container' target="_blank" rel="noopener noreferrer">
                     <FaGithub className='github-icon intro-icons icon-animation'/>
                   </a>                
                   <FaTwitterSquare className="twitter-icon intro-icons icon-animation"/>
