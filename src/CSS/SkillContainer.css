@@ -2,9 +2,8 @@
     height: 500px;
     width: 75%;
     margin: 0 auto;
-    background-color: rgb(37, 36, 36);
+    background-color: rgb(23, 22, 22);
     border-radius: 4px;
-
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -55,6 +54,14 @@
     justify-content: center;align-items: center;
 }
 
+.skill-groups{
+    >div:nth-child(1){
+        >h3{
+            color: rgb(0, 255, 174) !important;
+        }
+    }
+}
+
 .skill-group{
     display: flex;
     flex-wrap: wrap;
@@ -90,7 +97,7 @@
 }
 .kanit-semibold {
     font-family: "Prompt", system-ui;
-    font-weight: 600;
+    font-weight:bold;
     font-style: normal;
   }
 .bora{
