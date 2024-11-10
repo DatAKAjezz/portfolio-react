@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 import './CSS/App.css';
 import useDisplayMessage from './Hooks/useDisplayMessage';
-import { FaGithub, FaInstagram, FaTwitterSquare, FaLinkedin, FaBars } from 'react-icons/fa'; // Thêm FaBars icon
+import { FaGithub, FaInstagram, FaTwitterSquare, FaLinkedin, FaBars } from 'react-icons/fa'; 
 import SkillContainer from './components/SkillContainer';
 import { motion, useScroll } from 'framer-motion';
 import Contact from './components/Contact';
 
 function App() {
   const [activeItem, setActiveItem] = useState('home');
-  const [isNavOpen, setIsNavOpen] = useState(false); // Trạng thái menu
+  const [isNavOpen, setIsNavOpen] = useState(false); 
   const introMessage = "hi, i'm jezz...";
   const [showIntroMessage, setShowIntroMessage] = useState(false);
   const { scrollYProgress } = useScroll();
@@ -48,7 +48,7 @@ function App() {
   const scrollToSectionWithMargin = (section) => {
     const element = document.getElementById(section);
     const yOffset = -180;
-    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
   
     window.scrollTo({ top: y, behavior: "smooth" });
   };
@@ -77,8 +77,7 @@ function App() {
 
             <nav>
               <ul>
-                <li onClick={(e) =>{  
-                  e.stopPropagation();
+                <li onClick={() =>{  
                   setActiveItem('home');
                   setIsNavOpen(false); // Đóng menu sau khi chọn mục
                   window.scrollTo({
@@ -86,18 +85,16 @@ function App() {
                     behavior: 'smooth'
                   });
                 }} >Introduction</li>
-                <li onClick={(e) =>{
-                  e.stopPropagation();
+                <li onClick={() =>{
                   setActiveItem('skill');
                   setIsNavOpen(false); // Đóng menu sau khi chọn mục
                   scrollToSectionWithMargin("skill-section");
                 }} >Skill</li>
-                <li onClick={(e) => {
-                  e.stopPropagation();
+                <li onClick={() => {
                   setActiveItem('experience');
                   setIsNavOpen(false); // Đóng menu sau khi chọn mục
                 }}>Experiences</li>
-                <li onClick={(e) => {
+                <li onClick={() => {
                   setActiveItem('contact');
                   scrollToSectionWithMargin("contact-section")
                   setIsNavOpen(false); // Đóng menu sau khi chọn mục
