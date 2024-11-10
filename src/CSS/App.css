@@ -293,7 +293,14 @@
       text-align: center !important;
       font-size: 1.6rem !important;
       margin: 0 auto;
-      width: 80% !important;
+      width: 90% !important;
+    }
+    .menu-toggle {
+      display: block;
+      z-index: 100;
+      float: right;
+      margin: auto 1vw;
+      width: 10%;
     }
     .navbar-toggle-button{
       width: 80%;
@@ -308,12 +315,6 @@
   }
   nav ul >li:hover{
     background-color: rgb(67, 65, 65) !important;
-  }
-  .menu-toggle {
-    display: block;
-    z-index: 100;
-    float: right;
-    margin: auto 1vw;
   }
 
   .navbar-toggle-button{
