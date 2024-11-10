@@ -30,7 +30,7 @@ const SkillContainer = () => {
               skillTitleRef.current.classList.add("skill-title-pop-up")
             }} 
         >
-          <p>“Hi, I am “Dat”, a passionate developer with a focus on building efficient and modern web applications.</p>
+          <p>I'm a passionate developer with a focus on building efficient and modern web applications.</p>
           <p>A developer with a love for learning and mastering new technologies.</p> 
           <p>With expertise in C++ for competitive programming and problem-solving.”</p>
         </motion.div>

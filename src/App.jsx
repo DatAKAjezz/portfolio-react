@@ -5,6 +5,7 @@ import { FaGithub, FaInstagram, FaTwitterSquare, FaLinkedin, FaBars } from 'reac
 import SkillContainer from './components/SkillContainer';
 import { motion, useScroll } from 'framer-motion';
 import Contact from './components/Contact';
+import ReactCountryFlag from "react-country-flag"
 
 function App() {
   const [activeItem, setActiveItem] = useState('home');
@@ -47,7 +48,7 @@ function App() {
 
   const scrollToSectionWithMargin = (section) => {
     const element = document.getElementById(section);
-    const yOffset = -180;
+    const yOffset = -(window.innerHeight * 0.17);
     const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
   
     window.scrollTo({ top: y, behavior: "smooth" });
@@ -116,6 +117,16 @@ function App() {
                   <p style={{fontSize: '1.3rem'}}>{introMessage1}.</p>
                   <p style={{color: 'cyan'}}>{introMessage2}.</p>
                   <p style={{fontSize: '1.2rem'}}>{introMessage3}.</p>
+                  <ReactCountryFlag
+                  countryCode="VN"
+                  svg
+                  style={{
+                      width: '2em',
+                      height: '2em',
+                  }}
+                  title="VietNam"
+            />
+
                 </div>
                 <div className='intro-icon-container'>
                   <a href="https://github.com/DatAKAjezz" className = 'github-icon-container' target="_blank" rel="noopener noreferrer">

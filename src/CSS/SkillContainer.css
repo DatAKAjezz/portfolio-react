@@ -131,3 +131,39 @@
         y: 0    ;
     }
 }
+
+/* MARK: responsive 
+*/
+
+@media (max-width: 768px) {
+    .skill-container{
+        flex-wrap: wrap;
+        width: 86%;
+    }
+    .left-skill{
+        height: 40%;
+        width: 100%;
+        overflow: scroll;
+        >p{
+            font-size: 0.8rem;
+        }
+        >p:nth-child(2){
+            display: none;
+        }
+    }
+    .right-skill{
+        height: 60%;
+        width: 100%;
+    }
+    .skill-groups{
+        >div:nth-child(1) h3{
+            font-size: 1rem !important;
+        }
+    }
+    .skill-group >div >p{
+        font-size: 0.8rem;
+    }
+    .skill-group >div{
+        height: 1%;
+    }
+}
