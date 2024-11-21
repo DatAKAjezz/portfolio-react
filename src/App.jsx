@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './CSS/App.css';
+import './CSS/Mode.css'
 import useDisplayMessage from './Hooks/useDisplayMessage';
 import { FaGithub, FaInstagram, FaTwitterSquare, FaLinkedin, FaBars } from 'react-icons/fa'; 
 import SkillContainer from './components/SkillContainer';
@@ -8,6 +9,9 @@ import Contact from './components/Contact';
 import ReactCountryFlag from "react-country-flag"
 
 function App() {
+
+  const modeList = ['tetMode', 'lightMode', 'christmasMode']
+
   const [activeItem, setActiveItem] = useState('home');
   const [isNavOpen, setIsNavOpen] = useState(false); 
   const introMessage = "hi, i'm jezz...";
@@ -23,7 +27,7 @@ function App() {
   );
 
   const { displayedMessage: introMessage2 } = useDisplayMessage(
-    showIntroMessage ? "Future JS FullStack Developer" : "",
+    showIntroMessage ? "JS FullStack Developer" : "",
     90,
     "after-intro"
   );
@@ -80,7 +84,7 @@ function App() {
               <ul>
                 <li onClick={() =>{  
                   setActiveItem('home');
-                  setIsNavOpen(false); // Đóng menu sau khi chọn mục
+                  setIsNavOpen(false); 
                   window.scrollTo({
                     top: 0,
                     behavior: 'smooth'
@@ -88,7 +92,7 @@ function App() {
                 }} >Introduction</li>
                 <li onClick={() =>{
                   setActiveItem('skill');
-                  setIsNavOpen(false); // Đóng menu sau khi chọn mục
+                  setIsNavOpen(false);
                   scrollToSectionWithMargin("skill-section");
                 }} >Skill</li>
                 <li onClick={() => {
