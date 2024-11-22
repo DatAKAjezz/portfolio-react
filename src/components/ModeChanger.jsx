@@ -9,7 +9,7 @@ const ModeChanger = () => {
 
     const handleModeChanger = (e) => {
         setIsButtonClicked(prev => !prev);
-        if (isButtonClicked){
+        if (!isButtonClicked){
             e.target.style.transform = 'translateY(30px)'
             refPar.current.style.backgroundColor = 'grey';
         }
