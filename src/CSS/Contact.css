@@ -36,10 +36,22 @@
   font-size: 2rem;
   font-weight: bold;
 }
-
+/* right contact */
 .right-contact{
   width: 46%;
 }
+.right-contact-pop-up{
+  animation: right-contact-pop-up-animation 0.4s ease forwards;
+}
+@keyframes right-contact-pop-up-animation {
+  from{
+    transform: translateX(400px);
+  }
+  to{
+    transform: translateX(0px);
+  }
+}
+
 
 .contact-form {
     margin-top: 3vh !important;
@@ -116,8 +128,11 @@
     display: flex;
     >div{
       width: 20%;
-      >img{
+      >a{
         width: 100%;
+        >img{
+          width: 100%;
+        }
       }
     }
     >div:nth-child(1){
@@ -135,7 +150,6 @@
     font-size: 1.5rem;
     font-weight: bold;
   }
-
 
 /* MARK: responsive
 */
@@ -169,4 +183,5 @@
     }
   }
 }
+
 

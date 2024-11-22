@@ -7,6 +7,7 @@ import SkillContainer from './components/SkillContainer';
 import { motion, useScroll } from 'framer-motion';
 import Contact from './components/Contact';
 import ReactCountryFlag from "react-country-flag"
+import ModeChanger from './components/ModeChanger';
 
 function App() {
 
@@ -94,7 +95,7 @@ function App() {
                   setActiveItem('skill');
                   setIsNavOpen(false);
                   scrollToSectionWithMargin("skill-section");
-                }} >Skill</li>
+                }} >Skills</li>
                 <li onClick={() => {
                   setActiveItem('experience');
                   setIsNavOpen(false); // Đóng menu sau khi chọn mục
@@ -155,6 +156,7 @@ function App() {
 
           {/* Contact */}
           <Contact />
+          <ModeChanger/>
         </div>
       )}
     </div>

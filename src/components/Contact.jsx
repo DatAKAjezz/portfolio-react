@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import emailjs from 'emailjs-com';
 import '../CSS/Contact.css'
-import { easeIn, easeInOut, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 
 const Contact = () => {
@@ -14,6 +14,8 @@ const Contact = () => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+  const [isRightSkillPoppedUp, SetIsRightSkillPoppedUp] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -45,21 +47,24 @@ const Contact = () => {
             <div className='contact-container'>
                 <motion.div 
                   whileInView={{x: [-400, 0]}}
+                  onViewportEnter={() => {
+                    SetIsRightSkillPoppedUp(true);
+                  }}
                   transition={{duration: 0.5}}     
                   viewport={{once: true}}             
                   className = "left-contact" style={{paddingLeft: '5%'}}>
                     <div>Contact Me via</div>
                     <div className='contact-icon-container'>
-                        <div><img src = 'facebook.png'></img></div>
-                        <div><img src = 'gmail.png'></img></div>
+                        <div><a href = 'https://www.facebook.com/datdat2kk5' target='_blank'>
+                          <img src = 'facebook.png'></img>
+                        </a></div>
+                        <div><a href = ''>
+                          <img src = 'gmail.png'></img>
+                        </a></div>
                     </div>
                 
                 </motion.div>
-                <motion.div  
-                    whileInView={{x: [400, 0]}}
-                    transition={{duration: 0.5}}
-                    viewport={{once: true}}
-                    className= "right-contact">
+                <div className = {`right-contact ${isRightSkillPoppedUp ? 'right-contact-pop-up' : ''}`}> 
                     <h3>Send a form if you interested in collaboration!</h3>
                     <form onSubmit={handleSubmit} className="contact-form">
                     <div>
@@ -93,7 +98,7 @@ const Contact = () => {
                     </div>
                     <button type="submit">Send</button>
                     </form>
-                </motion.div>
+                </div>
             </div>
         </div>
         <div className='sayonara'>
