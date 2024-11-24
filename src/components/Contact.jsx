@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 import { useState } from 'react';
 import emailjs from 'emailjs-com';
 import '../CSS/Contact.css'
 import { motion } from "framer-motion";
 
 
-const Contact = () => {
+const Contact = ({isClicked}) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -40,7 +41,7 @@ const Contact = () => {
         <div className='contact-wrapper'>
             <div className='contact-title-container'>
                 <div className='borders'></div>
-                <div className='contact-title'>contact</div>
+                <div className='contact-title' style={{color: isClicked ? "black" : "white"}}>contact</div>
                 <div className='borders'></div>
             </div>  
 
@@ -53,7 +54,7 @@ const Contact = () => {
                   transition={{duration: 0.5}}     
                   viewport={{once: true}}             
                   className = "left-contact" style={{paddingLeft: '5%'}}>
-                    <div>Contact Me via</div>
+                    <div style={{color: isClicked ? "black" : "white"}}>Contact Me via</div>
                     <div className='contact-icon-container'>
                         <div><a href = 'https://www.facebook.com/datdat2kk5' target='_blank'>
                           <img src = 'facebook.png'></img>
@@ -65,7 +66,7 @@ const Contact = () => {
                 
                 </motion.div>
                 <div className = {`right-contact ${isRightSkillPoppedUp ? 'right-contact-pop-up' : ''}`}> 
-                    <h3>Send a form if you interested in collaboration!</h3>
+                    <h3 style={{color: isClicked ? "black" : "white"}}>Send a form if you interested in collaboration!</h3>
                     <form onSubmit={handleSubmit} className="contact-form">
                     <div>
                         <label>Name:</label>
@@ -101,7 +102,7 @@ const Contact = () => {
                 </div>
             </div>
         </div>
-        <div className='sayonara'>
+        <div className='sayonara' style={{color: isClicked ? "black" : "white"}}>
             Thanks for scrolling ! ( On developing )
         </div>
     </div>

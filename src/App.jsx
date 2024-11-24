@@ -1,23 +1,27 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './CSS/App.css';
 import './CSS/Mode.css'
 import useDisplayMessage from './Hooks/useDisplayMessage';
 import { FaGithub, FaInstagram, FaTwitterSquare, FaLinkedin, FaBars } from 'react-icons/fa'; 
 import SkillContainer from './components/SkillContainer';
-import { motion, useScroll } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Contact from './components/Contact';
 import ReactCountryFlag from "react-country-flag"
 import ModeChanger from './components/ModeChanger';
 
 function App() {
 
-  const modeList = ['tetMode', 'lightMode', 'christmasMode']
+  // refs
+  const refHeader = useRef(null);
+  const refIntro = useRef(null);
+  const refSkillContainer = useRef(null);
+
+  // const modeList = ['tetMode', 'lightMode', 'christmasMode']
 
   const [activeItem, setActiveItem] = useState('home');
   const [isNavOpen, setIsNavOpen] = useState(false); 
   const introMessage = "hi, i'm jezz...";
   const [showIntroMessage, setShowIntroMessage] = useState(false);
-  const { scrollYProgress } = useScroll();
 
   const { displayedMessage: displayedIntroMessage, visibilityState } = useDisplayMessage(introMessage, 120, "intro");
 
@@ -59,6 +63,11 @@ function App() {
     window.scrollTo({ top: y, behavior: "smooth" });
   };
 
+  const [isModeButtonClicked, setIsModeButtonClicked] = useState(false);
+  const handleModeButtonClick = () => {
+    setIsModeButtonClicked(prev => !prev);
+  }
+
   return (
     <div className={isNavOpen ? 'nav-open' : ''}>
       {visibilityState !== 'hidden' ? (
@@ -73,7 +82,7 @@ function App() {
         </div>
       ) : (
         <div>
-          <header className="header header-animation">
+          <header className="header header-animation" ref = {refHeader}>
             <h1 style={{fontSize: "2.4rem", zIndex: "99"}}>_jezz</h1>
 
             {/* Icon menu */} 
@@ -115,7 +124,7 @@ function App() {
                       transition={{duration: 0.4}}
                       viewport={{once: 'true'}}
           >
-            <div className="intro-container">
+            <div className="intro-container" ref = {refIntro}>
               <h1 className="container-tags" style={{fontSize: '1.8rem'}}>{tagMessage}</h1>
               <div className='right-intro top-intro '>
                 <div className='intro-message'>
@@ -152,15 +161,18 @@ function App() {
             </div>
           </motion.div>
           {/* Skills */}
-          <SkillContainer scrollYProgress={scrollYProgress} />
+          <SkillContainer isClicked = {isModeButtonClicked}/>
 
           {/* Contact */}
-          <Contact />
-          <ModeChanger/>
+          <Contact isClicked = {isModeButtonClicked}/>
+          <ModeChanger refs = {{header: refHeader, intro: refIntro, skill: refSkillContainer}}
+                       onClick={handleModeButtonClick}
+                       isClicked = {isModeButtonClicked}
+          />
         </div>
       )}
     </div>
   );
 }
 
-export default App;
+export default App; 

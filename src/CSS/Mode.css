@@ -1,8 +1,18 @@
+/*MARK: lightmode */
+
+.light-mode-header  {
+    background-color: rgb(151, 148, 148);
+    color: black;
+}
+
+.light-mode{
+     background-color:  #494947 !important;
+     color: white !important;
+}
+
+
 .tetMode{
     background-image: url('tet.gif');
     background-position: center;
     background-size: cover;
-
-    
-
 }

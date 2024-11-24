@@ -1,12 +1,12 @@
   *{  
     font-family: "Prompt", system-ui;
-    color: white;
     padding: 0;
     margin: 0;
   }
 
   body{
     background: rgb(0, 0, 0);
+    transition: background-color 0.4s ease;
   }
 
   /*MARK: header
@@ -32,7 +32,7 @@
   }
   @keyframes header-popup {
     from{
-      opacity: 0;
+      opacity: 0; 
       transform: translateY(-70px);
     }
     to{
@@ -133,6 +133,7 @@
   */
 
   .section1{
+    color: white;
     width: 75%;
     height: 500px;
     margin: 0 auto;
@@ -221,6 +222,7 @@
     transition: all 150ms ease-in-out;  
     cursor: pointer;
     font-size: 2.5rem;
+    color: white;
   }
   .intro-icons:hover{
     font-size: 3rem;
@@ -437,6 +439,7 @@
   background-color: rgb(0, 110, 255);
   padding-top: 2px;
   transition: background-color 0.4s ease;
+  cursor: pointer;
 }
 .mc-button{
   margin: 0 auto;
@@ -444,18 +447,17 @@
   height: 30px;
   border-radius: 50%;
   background-color: white;
-  cursor: pointer;
   transition: all 0.2s ease-in-out
 }
 #moon-icon{
   fill: yellow;
   font-size: 2rem;
-  transition: fill 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 #sun-icon{
   fill: orange;
   font-size: 2.4rem;
-  transition: fill 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 

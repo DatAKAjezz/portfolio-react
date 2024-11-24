@@ -3,6 +3,7 @@
     width: 75%;
     margin: 0 auto;
     background-color: rgb(23, 22, 22);
+    color: white;
     border-radius: 4px;
     display: flex;
     align-items: center;
@@ -12,6 +13,7 @@
 }
 .container-tags{
     background-color: rgb(142, 18, 192);
+    color: white !important;
     cursor: pointer;
     border-radius: 4px;
     padding: 5px 20px;  

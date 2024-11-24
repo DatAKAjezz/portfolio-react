@@ -1,23 +1,27 @@
+/* eslint-disable react/prop-types */
 import "../CSS/SkillContainer.css";
+import "../CSS/Mode.css"
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import useDisplayMessage from './../Hooks/useDisplayMessage';
 
-const SkillContainer = () => {
+const SkillContainer = ({isClicked}) => {
 
   let skillMessage = "skills";
   const [isSkillDisplayed, setIsSkillDisplayed] = useState(false);
   const { displayedMessage: displayedSkillMessage } = useDisplayMessage(
     isSkillDisplayed ? skillMessage : "", 120, "after-intro"
   );
+
+  console.log(isClicked);
   
   const skillTitleRef = useRef(null);
 
   return (
     <div className="skill-super-container" id="skill-section">
       <motion.div 
-        className="skill-container" 
+        className={`skill-container ${isClicked ? 'light-mode' : ''}`} 
         whileInView={{ opacity: [0, 1], y: [150, 0] }} 
         transition={{ duration: 0.4 }}
         viewport={{once: 'true'}}
@@ -30,7 +34,7 @@ const SkillContainer = () => {
               skillTitleRef.current.classList.add("skill-title-pop-up")
             }} 
         >
-          <p>I'm a passionate developer with a focus on building efficient and modern web applications.</p>
+          <p>I am a passionate developer with a focus on building efficient and modern web applications.</p>
           <p>A developer with a love for learning and mastering new technologies.</p> 
           <p>With expertise in C++ for competitive programming and problem-solving.”</p>
         </motion.div>
