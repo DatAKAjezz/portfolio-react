@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 import Contact from './components/Contact';
 import ReactCountryFlag from "react-country-flag"
 import ModeChanger from './components/ModeChanger';
+import useEventKeyListenser from './Hooks/useEventKeyListenser';
 
 function App() {
 
@@ -63,7 +64,14 @@ function App() {
     window.scrollTo({ top: y, behavior: "smooth" });
   };
 
+  //Mode Changer Listener
+  const { modeListener: keyListener } = useEventKeyListenser();
   const [isModeButtonClicked, setIsModeButtonClicked] = useState(false);
+  useEffect(() => {
+    setIsModeButtonClicked(keyListener);
+    console.log("App " + keyListener);
+  }, [keyListener])
+
   const handleModeButtonClick = () => {
     setIsModeButtonClicked(prev => !prev);
   }

@@ -14,7 +14,6 @@ const SkillContainer = ({isClicked}) => {
     isSkillDisplayed ? skillMessage : "", 120, "after-intro"
   );
 
-  console.log(isClicked);
   
   const skillTitleRef = useRef(null);
 

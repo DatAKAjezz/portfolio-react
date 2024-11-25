@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import  { useRef } from "react";
+import  { useEffect, useRef } from "react";
 import { FaMoon } from "react-icons/fa";
 import { } from "react-icons/hi";
 import {  IoSunny } from "react-icons/io5";
@@ -13,10 +13,9 @@ const ModeChanger = ({refs, onClick, isClicked}) => {
     const refHeader = refs.header;
     const refIntro = refs.intro;
 
-    
+    console.log("Mode " + isClicked);
 
     const handleModeChanger = () => {
-        console.log(isClicked);
         // light mode
         if (!isClicked){
             refBtn.current.style.transform = 'translateY(30px)'
@@ -36,6 +35,9 @@ const ModeChanger = ({refs, onClick, isClicked}) => {
             document.body.style.backgroundColor = 'black';
         }
     }
+    // useEffect(() => {
+    //     handleModeChanger();
+    // }, [isClicked])
 
   return (
     <div className="mc-button-container">
