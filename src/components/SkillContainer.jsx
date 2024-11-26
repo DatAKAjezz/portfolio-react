@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import "../CSS/SkillContainer.css";
 import "../CSS/Mode.css"
-import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import useDisplayMessage from './../Hooks/useDisplayMessage';
@@ -20,7 +19,7 @@ const SkillContainer = ({isClicked}) => {
   return (
     <div className="skill-super-container" id="skill-section">
       <motion.div 
-        className={`skill-container ${isClicked ? 'light-mode' : ''}`} 
+        className={`skill-container ${!isClicked ? 'light-mode' : ''}`} 
         whileInView={{ opacity: [0, 1], y: [150, 0] }} 
         transition={{ duration: 0.4 }}
         viewport={{once: 'true'}}
@@ -81,10 +80,6 @@ const SkillContainer = ({isClicked}) => {
       </motion.div>
     </div>
   );
-}
-
-SkillContainer.propTypes = {
-  scrollYProgress: PropTypes.number.isRequired
 }
 
 export default SkillContainer;

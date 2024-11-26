@@ -65,12 +65,12 @@ function App() {
   };
 
   //Mode Changer Listener
-  const { modeListener: keyListener } = useEventKeyListenser();
-  const [isModeButtonClicked, setIsModeButtonClicked] = useState(false);
+  const { isKeyTriggered: isKeyTriggered } = useEventKeyListenser();
+  const [isModeButtonClicked, setIsModeButtonClicked] = useState(true);
   useEffect(() => {
-    setIsModeButtonClicked(keyListener);
-    console.log("App " + keyListener);
-  }, [keyListener])
+    setIsModeButtonClicked(prev => !prev);
+    console.log("App " + isKeyTriggered);
+  }, [isKeyTriggered])
 
   const handleModeButtonClick = () => {
     setIsModeButtonClicked(prev => !prev);
@@ -176,6 +176,7 @@ function App() {
           <ModeChanger refs = {{header: refHeader, intro: refIntro, skill: refSkillContainer}}
                        onClick={handleModeButtonClick}
                        isClicked = {isModeButtonClicked}
+                       isKeyTriggered={isKeyTriggered}
           />
         </div>
       )}

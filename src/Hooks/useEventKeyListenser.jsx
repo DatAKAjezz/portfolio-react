@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react'
 
 const useEventKeyListenser = () => {
   
-  const [modeListener, setModeListener] = useState(false);
+  const [isKeyTriggered, setIsKeyTriggered] = useState(false);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.ctrlKey && e.key === 'm'){
         e.preventDefault();
-        setModeListener(prev => !prev);
+        setIsKeyTriggered(prev => !prev);
       }
     }
 
@@ -19,7 +19,7 @@ const useEventKeyListenser = () => {
 
   }, [])
 
-  return { modeListener }
+  return { isKeyTriggered }
 }
 
 export default useEventKeyListenser

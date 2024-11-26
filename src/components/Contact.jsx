@@ -26,7 +26,7 @@ const Contact = ({isClicked}) => {
       formData,
       'yIDjG3dEiU-ztXmd1'           
     )
-    .then((res) => {
+    .then(() => {
       alert('Message sent successfully!');
       setFormData({ name: '', email: '', message: '' });
     })
@@ -41,7 +41,7 @@ const Contact = ({isClicked}) => {
         <div className='contact-wrapper'>
             <div className='contact-title-container'>
                 <div className='borders'></div>
-                <div className='contact-title' style={{color: isClicked ? "black" : "white"}}>contact</div>
+                <div className='contact-title' style={{color: !isClicked ? "black" : "white"}}>contact</div>
                 <div className='borders'></div>
             </div>  
 
@@ -54,7 +54,7 @@ const Contact = ({isClicked}) => {
                   transition={{duration: 0.5}}     
                   viewport={{once: true}}             
                   className = "left-contact" style={{paddingLeft: '5%'}}>
-                    <div style={{color: isClicked ? "black" : "white"}}>Contact Me via</div>
+                    <div style={{color: !isClicked ? "black" : "white"}}>Contact Me via</div>
                     <div className='contact-icon-container'>
                         <div><a href = 'https://www.facebook.com/datdat2kk5' target='_blank'>
                           <img src = 'facebook.png'></img>
@@ -66,7 +66,7 @@ const Contact = ({isClicked}) => {
                 
                 </motion.div>
                 <div className = {`right-contact ${isRightSkillPoppedUp ? 'right-contact-pop-up' : ''}`}> 
-                    <h3 style={{color: isClicked ? "black" : "white"}}>Send a form if you interested in collaboration!</h3>
+                    <h3 style={{color: !isClicked ? "black" : "white"}}>Send a form if you interested in collaboration!</h3>
                     <form onSubmit={handleSubmit} className="contact-form">
                     <div>
                         <label>Name:</label>
@@ -102,7 +102,7 @@ const Contact = ({isClicked}) => {
                 </div>
             </div>
         </div>
-        <div className='sayonara' style={{color: isClicked ? "black" : "white"}}>
+        <div className='sayonara' style={{color: !  isClicked ? "black" : "white"}}>
             Thanks for scrolling ! ( On developing )
         </div>
     </div>

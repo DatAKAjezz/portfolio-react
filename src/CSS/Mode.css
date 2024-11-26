@@ -9,6 +9,21 @@
      background-color:  #494947 !important;
      color: white !important;
 }
+.mode-changer-landing{
+    animation: mode-changer-landing-animation 0.6s ease forwards;
+}
+
+@keyframes mode-changer-landing-animation{
+    0% {
+        transform: translateX(150px);
+    }
+    50%{
+        transform: translateX(-50px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
 
 
 .tetMode{

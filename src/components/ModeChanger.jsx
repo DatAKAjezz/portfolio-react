@@ -4,7 +4,7 @@ import { FaMoon } from "react-icons/fa";
 import { } from "react-icons/hi";
 import {  IoSunny } from "react-icons/io5";
 
-const ModeChanger = ({refs, onClick, isClicked}) => {
+const ModeChanger = ({refs, onClick, isClicked }) => {
 
     const refPar = useRef(null);
     const refBtn = useRef(null);
@@ -13,10 +13,7 @@ const ModeChanger = ({refs, onClick, isClicked}) => {
     const refHeader = refs.header;
     const refIntro = refs.intro;
 
-    console.log("Mode " + isClicked);
-
-    const handleModeChanger = () => {
-        // light mode
+    useEffect(() => {
         if (!isClicked){
             refBtn.current.style.transform = 'translateY(30px)'
             refPar.current.style.backgroundColor = "grey"
@@ -34,27 +31,24 @@ const ModeChanger = ({refs, onClick, isClicked}) => {
 
             document.body.style.backgroundColor = 'black';
         }
-    }
-    // useEffect(() => {
-    //     handleModeChanger();
-    // }, [isClicked])
+    }, [isClicked])
 
   return (
-    <div className="mc-button-container">
+    <div className="mc-button-container mode-changer-landing">
         <FaMoon id = 'moon-icon'
-                style={{fill: !isClicked ? 'yellow' : 'grey', fontSize: !isClicked ? '2.4rem' : '2rem'}} /> 
+                style={{fill: isClicked ? 'yellow' : 'grey', fontSize: isClicked ? '2.4rem' : '2rem'}} /> 
         <div className="mc-button-wrapper"
+             title = "Ctrl + M"
              ref = {refPar}
              onClick={() => {
                 onClick()
-                handleModeChanger()
              }}
              >
             <div className="mc-button" ref = {refBtn}>   
             </div>
         </div>
         <IoSunny id = 'sun-icon'
-                 style = {{fill: isClicked ? 'orange' : 'grey', fontSize: isClicked ? '3rem' : '2.4rem'}}
+                 style = {{fill: !isClicked ? 'orange' : 'grey', fontSize: !isClicked ? '3rem' : '2.4rem'}}
         />
     </div>
   );
