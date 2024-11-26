@@ -76,6 +76,15 @@ function App() {
     setIsModeButtonClicked(prev => !prev);
   }
 
+  // intro image randomize
+
+  const list_src = ['./turbo.jpg', './avt.jpg'];
+  const [imgIndex, setImgIndex] = useState(0);
+  
+  const handleImageRandomize = () => {
+    setImgIndex(prev => (prev + 1) % 2)
+  }
+
   return (
     <div className={isNavOpen ? 'nav-open' : ''}>
       {visibilityState !== 'hidden' ? (
@@ -162,7 +171,7 @@ function App() {
 
               <div className='left-intro bottom-intro'>
                 <div className="left-intro-image">
-                  <img className='intro-image-popup' src="./avt.jpg" alt="Intro" />
+                  <img className='intro-image-popup' src = { list_src[imgIndex] }  onClick={handleImageRandomize} alt="Intro" />
                 </div>
               </div>
 
