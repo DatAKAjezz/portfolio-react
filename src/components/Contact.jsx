@@ -103,7 +103,7 @@ const Contact = ({isClicked}) => {
             </div>
         </div>
         <div className='sayonara' style={{color: !  isClicked ? "black" : "white"}}>
-            Thanks for scrolling ! ( On developing )
+            Thanks for scrolling ! ( In development )
         </div>
     </div>
   );
