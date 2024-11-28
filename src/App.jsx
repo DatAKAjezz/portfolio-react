@@ -87,7 +87,7 @@ function App() {
 
   return (
     <div className={isNavOpen ? 'nav-open' : ''}>
-      {visibilityState !== 'hidden' ? (
+      {/* {visibilityState !== 'hidden' ? (
         <div 
           style={{
             opacity: visibilityState === 'visible' ? 1 : 0,
@@ -97,7 +97,7 @@ function App() {
         >
           <h1>{displayedIntroMessage}</h1>
         </div>
-      ) : (
+      ) : ( */}
         <div>
           <header className="header header-animation" ref = {refHeader}>
             <h1 style={{fontSize: "2.4rem", zIndex: "99"}}>_jezz</h1>
