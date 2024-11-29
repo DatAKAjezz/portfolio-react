@@ -23,7 +23,7 @@ const ModeChanger = ({refs, onClick, isClicked }) => {
             document.body.style.backgroundColor = "white"
         }   
         else{
-            refPar.current.style.backgroundColor = 'rgb(64, 64, 66)';
+            refPar.current.style.backgroundColor = 'rgb(15, 15, 191)';
 
             refHeader?.current.classList.remove('light-mode-header');
             refIntro?.current.classList.remove('light-mode')
