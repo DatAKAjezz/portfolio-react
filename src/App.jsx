@@ -14,6 +14,7 @@ function App() {
 
   // refs
   const refHeader = useRef(null);
+  const refNav = useRef(null);
   const refIntro = useRef(null);
   const refSkillContainer = useRef(null);
 
@@ -107,7 +108,7 @@ function App() {
               <FaBars className='navbar-toggle-button'/>
             </div>
 
-            <nav>
+            <nav ref = {refNav}>
               <ul>
                 <li onClick={() =>{  
                   setActiveItem('home');
@@ -182,7 +183,7 @@ function App() {
 
           {/* Contact */}
           <Contact isClicked = {isModeButtonClicked}/>
-          <ModeChanger refs = {{header: refHeader, intro: refIntro, skill: refSkillContainer}}
+          <ModeChanger refs = {{header: refHeader, intro: refIntro, skill: refSkillContainer, nav: refNav}}
                        onClick={handleModeButtonClick}
                        isClicked = {isModeButtonClicked}
                        isKeyTriggered={isKeyTriggered}

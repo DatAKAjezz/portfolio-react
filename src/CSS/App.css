@@ -42,6 +42,7 @@
   }
 
   nav{
+    background-color: inherit;
     width: 40%;
   } 
   nav ul {

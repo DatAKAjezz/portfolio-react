@@ -11,13 +11,13 @@ const ModeChanger = ({refs, onClick, isClicked }) => {
     // refs from others components
     const refHeader = refs.header;
     const refIntro = refs.intro;
-
-
+    const refNav = refs.nav;
 
     useEffect(() => {
         if (!isClicked){
             refPar.current.style.backgroundColor = 'rgb(103, 105, 106)';
 
+            refNav.current.classList.add('light-mode-nav');
             refHeader?.current.classList.add('light-mode-header')
             refIntro?.current.classList.add('light-mode')
             document.body.style.backgroundColor = "white"
@@ -25,6 +25,7 @@ const ModeChanger = ({refs, onClick, isClicked }) => {
         else{
             refPar.current.style.backgroundColor = 'rgb(15, 15, 191)';
 
+            refNav.current.classList.remove('light-mode-nav');
             refHeader?.current.classList.remove('light-mode-header');
             refIntro?.current.classList.remove('light-mode')
             document.body.style.backgroundColor = 'black';

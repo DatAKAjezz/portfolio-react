@@ -43,6 +43,10 @@
   color: black;
 }
 
+.light-mode-nav{
+  background-color: rgb(151, 148, 148);
+}
+
 .light-mode {
   background-color: #494947 !important;
   color: white !important;
