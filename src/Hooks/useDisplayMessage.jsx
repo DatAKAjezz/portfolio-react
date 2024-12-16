@@ -9,10 +9,14 @@ const useDisplayMessage = (message, delay, typeOfDisplay) => {
   useEffect(() => {
       if (displayedMessage.length < message.length) {
         const timer = setTimeout(() => {
-          setDisplayedMessage(message.slice(0, displayedMessage.length + 1));
+          setDisplayedMessage(
+            message.slice(0, displayedMessage.length + 1) +
+            (displayedMessage.length + 1 === message.length ? "" : "|")
+          );
         }, delay);
         return () => clearTimeout(timer);
-      } else if (displayedMessage.length === message.length && typeOfDisplay === "intro") {
+      } else if (displayedMessage.length === message.length || typeOfDisplay === "intro") {
+                setDisplayedMessage(message);
                 const timer = setTimeout(() => setVisibilityState("fading"), 1500);
                 return () => clearTimeout(timer);
               };

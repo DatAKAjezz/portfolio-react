@@ -77,8 +77,6 @@ function App() {
     setIsModeButtonClicked(prev => !prev);
   }
 
-  // intro image randomize
-
   const list_src = ['./turbo.jpg', './avt.jpg'];
   const [imgIndex, setImgIndex] = useState(0);
   
